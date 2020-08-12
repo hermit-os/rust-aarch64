@@ -5,17 +5,10 @@
 // http://opensource.org/licenses/MIT>, at your option. This file may not be
 // copied, modified, or distributed except according to those terms.
 
-#![allow(stable_features)]
-#![feature(llvm_asm, core_intrinsics)]
-#![no_std]
-
-pub mod paging;
-pub mod regs;
-
-pub use regs::*;
-
-/// The halt function stops the processor until the next interrupt arrives
-#[inline(always)]
-pub unsafe fn halt() {
-    llvm_asm!("wfi" :::: "volatile");
+/// Determines the 64-bit physical count value.
+#[inline]
+pub unsafe fn get_cntpct_el0() -> u64 {
+	let value;
+	llvm_asm!("mrs %0, cntpct_el0" : "=r" (value) :: : "volatile");
+	value
 }
