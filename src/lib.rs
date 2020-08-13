@@ -12,8 +12,6 @@
 pub mod paging;
 pub mod regs;
 
-pub use regs::*;
-
 /// The halt function stops the processor until the next interrupt arrives
 #[inline(always)]
 pub unsafe fn halt() {

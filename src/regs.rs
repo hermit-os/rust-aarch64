@@ -6,9 +6,9 @@
 // copied, modified, or distributed except according to those terms.
 
 /// Determines the 64-bit physical count value.
-#[inline]
+#[inline(always)]
 pub unsafe fn get_cntpct_el0() -> u64 {
 	let value;
-	llvm_asm!("mrs %0, cntpct_el0" : "=r" (value) :: : "volatile");
+	llvm_asm!("mrs $0, cntpct_el0" : "=r" (value) :: : "volatile");
 	value
 }
