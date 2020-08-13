@@ -23,15 +23,15 @@ jobs:
           - os: macOS-latest
             rust: 'nightly'
             components: 'rust-src'
-            targets: ['x86_64-apple-darwin', "aarch64-unknown-none"]
+            targets: 'x86_64-apple-darwin', 'aarch64-unknown-none'
           - os: windows-latest
             rust: 'nightly'
             components: 'rust-src'
-            targets: ['x86_64-pc-windows-msvc', "aarch64-unknown-none"]
+            targets: 'x86_64-pc-windows-msvc', 'aarch64-unknown-none'
           - os: ubuntu-latest
             rust: 'nightly'
             components: 'rust-src'
-            targets: ['x86_64-unknown-linux-gnu', "aarch64-unknown-none"]
+            targets: 'x86_64-unknown-linux-gnu', 'aarch64-unknown-none'
 
 
     steps:
