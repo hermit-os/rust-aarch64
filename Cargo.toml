@@ -14,3 +14,4 @@ edition = '2018'
 exclude = ["/.travis.yml", "/.gitlab-ci.yml", ".gitignore", ".gitattributes", "/.github/*"]
 
 [dependencies]
+cortex-a = "3.0.4"
