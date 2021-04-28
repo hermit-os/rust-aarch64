@@ -6,9 +6,10 @@
 // copied, modified, or distributed except according to those terms.
 
 #![allow(stable_features)]
-#![feature(llvm_asm, core_intrinsics)]
+#![feature(asm, llvm_asm, core_intrinsics)]
 #![no_std]
 
+pub mod instructions;
 pub mod paging;
 pub mod regs;
 
