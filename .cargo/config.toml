@@ -1,0 +1,5 @@
+[unstable]
+build-std = ["core", "alloc"]
+
+[build]
+target = "aarch64-unknown-none"
