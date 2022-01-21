@@ -11,5 +11,6 @@
 #![no_std]
 
 pub mod instructions;
+pub mod irq;
 pub mod paging;
 pub mod regs;
