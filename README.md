@@ -1,5 +1,7 @@
 # rust-aarch64
 
+![CI](https://github.com/hermitcore/rust-aarch64/workflows/CI/badge.svg?branch=master)
+[![Latest Version](https://img.shields.io/crates/v/aarch64.svg)](https://crates.io/crates/aarch64)
 [![Documentation](https://img.shields.io/badge/docs-latest-blue.svg)](https://docs.rs/aarch64/latest/aarch64/)
 [![License](https://img.shields.io/crates/l/aarch64.svg)](https://img.shields.io/crates/l/aarch64.svg)
 
