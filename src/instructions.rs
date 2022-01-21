@@ -1,13 +1,14 @@
+use core::arch::asm;
 
 /// Halt the CPU until the next interrupt occurs
 #[inline]
 pub fn halt() {
-    unsafe {
-        asm!("wfi", options(nomem, nostack))
-    }
+    unsafe { asm!("wfi", options(nomem, nostack)) }
 }
 
 mod exceptions {
+    use core::arch::asm;
+
     /// Generate an exception targeting EL1, with the specified exception code
     #[inline]
     pub unsafe fn svc<const CODE: u16>() {
@@ -30,16 +31,12 @@ mod exceptions {
     /// the specified code saved in `ESR_ELx.ISS`
     #[inline]
     pub fn brk<const CODE: u16>() {
-        unsafe {
-            asm!("brk #{}", const CODE, options(nomem, nostack))
-        }
+        unsafe { asm!("brk #{}", const CODE, options(nomem, nostack)) }
     }
 
     /// Trigger a halt debug event, the architecture will stop and enter a debug state.
     #[inline]
     pub fn debug_halt() {
-        unsafe {
-            asm!("hlt #0", options(nomem, nostack))
-        }
+        unsafe { asm!("hlt #0", options(nomem, nostack)) }
     }
 }
