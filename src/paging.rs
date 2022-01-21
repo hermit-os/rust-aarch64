@@ -280,12 +280,6 @@ impl fmt::Pointer for PhysAddr {
     }
 }
 
-impl Hash for PhysAddr {
-    fn hash<H: Hasher>(&self, state: &mut H) {
-        self.0.hash(state);
-    }
-}
-
 /// A wrapper for a virtual address, which is in principle
 /// derived from the crate x86.
 #[repr(transparent)]
@@ -643,12 +637,6 @@ impl fmt::Pointer for VirtAddr {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
         use core::fmt::LowerHex;
         self.0.fmt(f)
-    }
-}
-
-impl Hash for VirtAddr {
-    fn hash<H: Hasher>(&self, state: &mut H) {
-        self.0.hash(state);
     }
 }
 
