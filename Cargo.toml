@@ -11,7 +11,7 @@ readme = "README.md"
 keywords = ["os", "arm64", "aarch64"]
 license = "MIT/Apache-2.0"
 edition = '2018'
-exclude = ["/.travis.yml", "/.gitlab-ci.yml", ".gitignore", ".gitattributes", "/.github/*"]
+exclude = ["/.gitlab-ci.yml", ".gitignore", ".gitattributes", "/.github/*"]
 
 [dependencies]
 cortex-a = "7"
