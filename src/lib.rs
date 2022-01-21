@@ -6,8 +6,10 @@
 // copied, modified, or distributed except according to those terms.
 
 #![allow(stable_features)]
-#![feature(llvm_asm, core_intrinsics)]
+#![feature(core_intrinsics)]
 #![no_std]
+
+use core::arch::asm;
 
 pub mod paging;
 pub mod regs;
@@ -15,5 +17,5 @@ pub mod regs;
 /// The halt function stops the processor until the next interrupt arrives
 #[inline(always)]
 pub unsafe fn halt() {
-    llvm_asm!("wfi" :::: "volatile");
+    asm!("wfi", options(nostack, nomem),);
 }
