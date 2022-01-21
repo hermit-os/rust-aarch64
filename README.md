@@ -1,5 +1,8 @@
 # rust-aarch64
 
+[![Documentation](https://img.shields.io/badge/docs-latest-blue.svg)](https://docs.rs/aarch64/latest/aarch64/)
+[![License](https://img.shields.io/crates/l/aarch64.svg)](https://img.shields.io/crates/l/aarch64.svg)
+
 Rust library to use aarch64 specific functionality and registers.
 
 ## License
