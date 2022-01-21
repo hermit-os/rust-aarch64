@@ -1,6 +1,5 @@
 use core::convert::{From, Into};
 use core::fmt;
-use core::hash::{Hash, Hasher};
 use core::ops;
 
 /// Align address downwards.
@@ -101,12 +100,14 @@ impl From<i32> for PhysAddr {
     }
 }
 
+#[allow(clippy::from_over_into)]
 impl Into<u64> for PhysAddr {
     fn into(self) -> u64 {
         self.0
     }
 }
 
+#[allow(clippy::from_over_into)]
 impl Into<usize> for PhysAddr {
     fn into(self) -> usize {
         self.0 as usize
@@ -409,6 +410,7 @@ impl From<i32> for VirtAddr {
     }
 }
 
+#[allow(clippy::from_over_into)]
 impl Into<u64> for VirtAddr {
     fn into(self) -> u64 {
         self.0
@@ -421,6 +423,7 @@ impl From<usize> for VirtAddr {
     }
 }
 
+#[allow(clippy::from_over_into)]
 impl Into<usize> for VirtAddr {
     fn into(self) -> usize {
         self.0 as usize
