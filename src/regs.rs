@@ -1,1 +1,1 @@
-pub use cortex_a::registers::*;
+pub use aarch64_cpu::registers::*;

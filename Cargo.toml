@@ -1,6 +1,6 @@
 [package]
 name = "aarch64"
-version = "0.0.7"
+version = "0.0.9"
 authors = ["Stefan Lankes <slankes@eonerc.rwth-aachen.de>"]
 
 homepage = "https://github.com/hermitcore/rust-aarch64"
@@ -10,8 +10,8 @@ documentation = "https://docs.rs/aarch64"
 readme = "README.md"
 keywords = ["os", "arm64", "aarch64"]
 license = "MIT/Apache-2.0"
-edition = '2018'
+edition = '2021'
 exclude = ["/.gitlab-ci.yml", ".gitignore", ".gitattributes", "/.github/*"]
 
 [dependencies]
-cortex-a = "7"
+aarch64-cpu = "9.3"
