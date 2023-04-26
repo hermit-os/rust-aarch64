@@ -580,7 +580,7 @@ impl ops::Shr<u64> for VirtAddr {
     type Output = u64;
 
     fn shr(self, rhs: u64) -> Self::Output {
-        self.0 >> rhs as u64
+        self.0 >> rhs
     }
 }
 
