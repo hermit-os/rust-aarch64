@@ -6,6 +6,7 @@ pub fn halt() {
     unsafe { asm!("wfi", options(nomem, nostack)) }
 }
 
+#[cfg(feature = "nightly")]
 mod exceptions {
     use core::arch::asm;
 
