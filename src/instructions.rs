@@ -7,7 +7,8 @@ pub fn halt() {
 }
 
 #[cfg(feature = "nightly")]
-mod exceptions {
+#[allow(clippy::missing_safety_doc)]
+pub mod exceptions {
     use core::arch::asm;
 
     /// Generate an exception targeting EL1, with the specified exception code
