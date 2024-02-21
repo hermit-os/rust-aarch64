@@ -7,7 +7,7 @@
 
 #![allow(dead_code)]
 #![allow(stable_features)]
-#![feature(asm_const, core_intrinsics)]
+#![feature(asm_const)]
 #![no_std]
 
 pub mod instructions;
