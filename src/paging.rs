@@ -31,6 +31,11 @@ fn align_up(addr: u64, align: u64) -> u64 {
 pub struct PhysAddr(pub u64);
 
 impl PhysAddr {
+    #[inline]
+    pub const fn new(addr: u64) -> Self {
+        Self(addr)
+    }
+
     /// Convert to `u64`
     pub fn as_u64(self) -> u64 {
         self.0
@@ -287,6 +292,11 @@ impl fmt::Pointer for PhysAddr {
 pub struct VirtAddr(pub u64);
 
 impl VirtAddr {
+    #[inline]
+    pub const fn new(addr: u64) -> Self {
+        Self(addr)
+    }
+
     /// Convert from `u64`
     pub const fn from_u64(v: u64) -> Self {
         VirtAddr(v)
