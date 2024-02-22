@@ -6,7 +6,9 @@ pub fn halt() {
     unsafe { asm!("wfi", options(nomem, nostack)) }
 }
 
-mod exceptions {
+#[cfg(feature = "nightly")]
+#[allow(clippy::missing_safety_doc)]
+pub mod exceptions {
     use core::arch::asm;
 
     /// Generate an exception targeting EL1, with the specified exception code

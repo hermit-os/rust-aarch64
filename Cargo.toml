@@ -16,3 +16,7 @@ exclude = ["/.gitlab-ci.yml", ".gitignore", ".gitattributes", "/.github/*"]
 [dependencies]
 aarch64-cpu = { version = "9.3" }
 tock-registers = { version = "0.8.x", default-features = false }
+
+[features]
+default = ["nightly"]
+nightly = []
