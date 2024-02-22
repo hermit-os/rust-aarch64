@@ -118,33 +118,11 @@ impl Into<usize> for PhysAddr {
     }
 }
 
-impl ops::Add for PhysAddr {
-    type Output = PhysAddr;
-
-    fn add(self, rhs: PhysAddr) -> Self::Output {
-        PhysAddr(self.0 + rhs.0)
-    }
-}
-
 impl ops::Add<u64> for PhysAddr {
     type Output = PhysAddr;
 
     fn add(self, rhs: u64) -> Self::Output {
         PhysAddr::from(self.0 + rhs)
-    }
-}
-
-impl ops::Add<usize> for PhysAddr {
-    type Output = PhysAddr;
-
-    fn add(self, rhs: usize) -> Self::Output {
-        PhysAddr::from(self.0 + rhs as u64)
-    }
-}
-
-impl ops::AddAssign for PhysAddr {
-    fn add_assign(&mut self, other: PhysAddr) {
-        *self = PhysAddr::from(self.0 + other.0);
     }
 }
 
@@ -155,10 +133,10 @@ impl ops::AddAssign<u64> for PhysAddr {
 }
 
 impl ops::Sub for PhysAddr {
-    type Output = PhysAddr;
+    type Output = u64;
 
     fn sub(self, rhs: PhysAddr) -> Self::Output {
-        PhysAddr::from(self.0 - rhs.0)
+        self.as_u64().checked_sub(rhs.as_u64()).unwrap()
     }
 }
 
@@ -167,14 +145,6 @@ impl ops::Sub<u64> for PhysAddr {
 
     fn sub(self, rhs: u64) -> Self::Output {
         PhysAddr::from(self.0 - rhs)
-    }
-}
-
-impl ops::Sub<usize> for PhysAddr {
-    type Output = PhysAddr;
-
-    fn sub(self, rhs: usize) -> Self::Output {
-        PhysAddr::from(self.0 - rhs as u64)
     }
 }
 
@@ -439,33 +409,11 @@ impl Into<usize> for VirtAddr {
     }
 }
 
-impl ops::Add for VirtAddr {
-    type Output = VirtAddr;
-
-    fn add(self, rhs: VirtAddr) -> Self::Output {
-        VirtAddr(self.0 + rhs.0)
-    }
-}
-
 impl ops::Add<u64> for VirtAddr {
     type Output = VirtAddr;
 
     fn add(self, rhs: u64) -> Self::Output {
         VirtAddr(self.0 + rhs)
-    }
-}
-
-impl ops::Add<usize> for VirtAddr {
-    type Output = VirtAddr;
-
-    fn add(self, rhs: usize) -> Self::Output {
-        VirtAddr::from(self.0 + rhs as u64)
-    }
-}
-
-impl ops::AddAssign for VirtAddr {
-    fn add_assign(&mut self, other: VirtAddr) {
-        *self = VirtAddr::from(self.0 + other.0);
     }
 }
 
@@ -475,17 +423,11 @@ impl ops::AddAssign<u64> for VirtAddr {
     }
 }
 
-impl ops::AddAssign<usize> for VirtAddr {
-    fn add_assign(&mut self, offset: usize) {
-        *self = VirtAddr::from(self.0 + offset as u64);
-    }
-}
-
 impl ops::Sub for VirtAddr {
-    type Output = VirtAddr;
+    type Output = u64;
 
     fn sub(self, rhs: VirtAddr) -> Self::Output {
-        VirtAddr::from(self.0 - rhs.0)
+        self.as_u64().checked_sub(rhs.as_u64()).unwrap()
     }
 }
 
@@ -494,14 +436,6 @@ impl ops::Sub<u64> for VirtAddr {
 
     fn sub(self, rhs: u64) -> Self::Output {
         VirtAddr::from(self.0 - rhs)
-    }
-}
-
-impl ops::Sub<usize> for VirtAddr {
-    type Output = VirtAddr;
-
-    fn sub(self, rhs: usize) -> Self::Output {
-        VirtAddr::from(self.0 - rhs as u64)
     }
 }
 
