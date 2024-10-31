@@ -12,6 +12,7 @@ keywords = ["os", "arm64", "aarch64"]
 license = "MIT/Apache-2.0"
 edition = '2021'
 exclude = ["/.gitlab-ci.yml", ".gitignore", ".gitattributes", "/.github/*"]
+rust-version = "1.82"
 
 [dependencies]
 aarch64-cpu = { version = "9.3" }

@@ -6,7 +6,6 @@
 // copied, modified, or distributed except according to those terms.
 
 #![allow(dead_code)]
-#![cfg_attr(feature = "nightly", feature(asm_const))]
 #![no_std]
 
 pub mod instructions;
