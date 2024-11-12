@@ -6,7 +6,6 @@ pub fn halt() {
     unsafe { asm!("wfi", options(nomem, nostack)) }
 }
 
-#[cfg(feature = "nightly")]
 #[allow(clippy::missing_safety_doc)]
 pub mod exceptions {
     use core::arch::asm;
