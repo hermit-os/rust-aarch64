@@ -15,9 +15,9 @@ exclude = ["/.gitlab-ci.yml", ".gitignore", ".gitattributes", "/.github/*"]
 rust-version = "1.82"
 
 [dependencies]
-aarch64-cpu = { version = "9.3" }
+aarch64-cpu = { version = "10.0" }
 memory_addresses = { version = "0.2.0", default-features = false, features = ["aarch64"] }
-tock-registers = { version = "0.8.x", default-features = false }
+tock-registers = { version = "0.9.x", default-features = false }
 
 [features]
 default = ["nightly"]
