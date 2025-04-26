@@ -1,6 +1,6 @@
 [package]
 name = "aarch64"
-version = "0.0.12"
+version = "0.0.14"
 authors = ["Stefan Lankes <slankes@eonerc.rwth-aachen.de>"]
 
 homepage = "https://github.com/hermitcore/rust-aarch64"
